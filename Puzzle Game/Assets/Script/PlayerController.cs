@@ -10,25 +10,41 @@ public class PlayerController : MonoBehaviour
     [SerializeField] public GameObject box_A;
     [SerializeField] public GameObject box_B;
 
-    [SerializeField] private Vector3 box1_originPosition;
-    [SerializeField] private Vector3 box2_originPosition;
+    private Vector3 box1_originPosition;
+    private Vector3 box2_originPosition;
 
-    [SerializeField] private Vector3 box1_targetPosition;
-    [SerializeField] private Vector3 box2_targetPosition;
+    private Vector3 box1_targetPosition;
+    private Vector3 box2_targetPosition;
 
     [SerializeField] public bool box1_moving;
     [SerializeField] public bool box2_moving;
+
+    private Vector3 boxA_spawn;
+    private Vector3 boxB_spawn;
+
+    [Header("Boxes Spawn")]
+    [SerializeField] private Vector3Int boxA_spawnInt;
+    [SerializeField] private Vector3Int boxB_spawnInt;
     #endregion
 
-
+    [SerializeField] private Grid grid;
+    [SerializeField] private GridLayout gridLayout;
     [SerializeField] private float moveIntervalTime; // grid size
 
+    private void Start()
+    {
+        boxA_spawn = gridLayout.GetLayoutCellCenter() + grid.CellToWorld(boxA_spawnInt);
+        boxB_spawn = gridLayout.GetLayoutCellCenter() + grid.CellToWorld(boxB_spawnInt);
+
+        box_A.transform.position = boxA_spawn;
+        box_B.transform.position = boxB_spawn;
+    }
     private void Update()
     {
         BoxMovement(box_A, box_B);
     }
 
-    private void BoxMovement(GameObject box1 , GameObject box2)
+    private void BoxMovement(GameObject box1, GameObject box2)
     {
         if (Input.GetKey(KeyCode.W) && !box1_moving)
         {
