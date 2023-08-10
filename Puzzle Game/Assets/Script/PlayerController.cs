@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Timeline;
 using UnityEngine.UIElements;
 using UnityEngine.Windows.Speech;
 
@@ -84,36 +85,28 @@ public class PlayerController : MonoBehaviour
 
     public IEnumerator MoveBox1(GameObject boxA, GameObject boxB, Vector3 direction)
     {
-
-        boxA_script.boxIsMoving = true;
-        boxA_moving = true;
-
-        float elapsedTime = 0;
-
-        boxA_originPosition = new Vector3((float)Math.Round(boxA.transform.position.x, 1), (float)Math.Round(boxA.transform.position.y, 1), 0);
-
-        boxA_targetPosition = boxA_originPosition + direction;
-
-        if (boxA.GetComponent<BoxLogic>().touchingOtherBox) // and box above or bellow
+        if (boxA.GetComponent<BoxLogic>().otherBoxTouchingUp && direction == Vector3.up && !boxB.GetComponent<BoxLogic>().wallTouchingUp)
         {
+            Debug.Log("Here BEEECH");
+            boxA_script.boxIsMoving = true;
+            boxA_moving = true;
+
+            float elapsedTime = 0;
+
+            boxA_originPosition = new Vector3((float)Math.Round(boxA.transform.position.x, 1), (float)Math.Round(boxA.transform.position.y, 1), 0);
+
+            boxA_targetPosition = boxA_originPosition + direction;
+
             if (boxA.GetComponent<BoxLogic>().otherBoxTouchingUp && !boxB.GetComponent<BoxLogic>().wallTouchingUp && boxA.GetComponent<BoxLogic>().canPushOtherUp)
             {
                 boxB_originPosition = new Vector3((float)Math.Round(boxB.transform.position.x, 1), (float)Math.Round(boxB.transform.position.y, 1), 0);
                 boxB_targetPosition = boxB_originPosition + direction;
             }
-            else if (boxA.GetComponent<BoxLogic>().otherBoxTouchingDown && !boxB.GetComponent<BoxLogic>().wallTouchingDown && boxA.GetComponent<BoxLogic>().canPushOtherDown)
-            {
-                boxB_originPosition = new Vector3((float)Math.Round(boxB.transform.position.x, 1), (float)Math.Round(boxB.transform.position.y, 1), 0);
-                boxB_targetPosition = boxB_originPosition + direction;
-                Debug.Log("can push up");
-            }
-        }
 
-        while (elapsedTime < moveIntervalTime)
-        {
-            boxA.transform.position = Vector3.Lerp(boxA_originPosition, boxA_targetPosition, elapsedTime / moveIntervalTime);
-            if (boxA.GetComponent<BoxLogic>().touchingOtherBox) // and box above or bellow
+            while (elapsedTime < moveIntervalTime)
             {
+                boxA.transform.position = Vector3.Lerp(boxA_originPosition, boxA_targetPosition, elapsedTime / moveIntervalTime);
+
                 if (boxA.GetComponent<BoxLogic>().otherBoxTouchingUp && !boxB.GetComponent<BoxLogic>().wallTouchingUp && boxA.GetComponent<BoxLogic>().canPushOtherUp)
                 {
                     boxB.transform.position = Vector3.Lerp(boxB_originPosition, boxB_targetPosition, elapsedTime / moveIntervalTime);
@@ -122,88 +115,301 @@ public class PlayerController : MonoBehaviour
                 {
                     boxB.transform.position = Vector3.Lerp(boxB_originPosition, boxB_targetPosition, elapsedTime / moveIntervalTime);
                 }
-            }
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
 
-        boxA.transform.position = boxA_targetPosition;
-        if (boxA.GetComponent<BoxLogic>().touchingOtherBox) // and box above or bellow
-        {
+                elapsedTime += Time.deltaTime;
+                yield return null;
+            }
+
+            boxA.transform.position = boxA_targetPosition;
+
             if (boxA.GetComponent<BoxLogic>().otherBoxTouchingUp && !boxB.GetComponent<BoxLogic>().wallTouchingUp && boxA.GetComponent<BoxLogic>().canPushOtherUp)
             {
                 boxB.transform.position = boxB_targetPosition;
             }
-            else if (boxA.GetComponent<BoxLogic>().otherBoxTouchingDown && !boxB.GetComponent<BoxLogic>().wallTouchingDown && boxA.GetComponent<BoxLogic>().canPushOtherDown)
+
+            boxA_script.boxIsMoving = false;
+            boxA_moving = false;
+        }
+
+        else if (boxA.GetComponent<BoxLogic>().otherBoxTouchingDown && direction == Vector3.down && !boxB.GetComponent<BoxLogic>().wallTouchingDown)
+        {
+            boxA_script.boxIsMoving = true;
+            boxA_moving = true;
+
+            float elapsedTime = 0;
+
+            boxA_originPosition = new Vector3((float)Math.Round(boxA.transform.position.x, 1), (float)Math.Round(boxA.transform.position.y, 1), 0);
+
+            boxA_targetPosition = boxA_originPosition + direction;
+
+            if (boxA.GetComponent<BoxLogic>().otherBoxTouchingDown && !boxB.GetComponent<BoxLogic>().wallTouchingDown && boxA.GetComponent<BoxLogic>().canPushOtherDown)
+            {
+                boxB_originPosition = new Vector3((float)Math.Round(boxB.transform.position.x, 1), (float)Math.Round(boxB.transform.position.y, 1), 0);
+                boxB_targetPosition = boxB_originPosition + direction;
+            }
+
+            while (elapsedTime < moveIntervalTime)
+            {
+                boxA.transform.position = Vector3.Lerp(boxA_originPosition, boxA_targetPosition, elapsedTime / moveIntervalTime);
+
+                if (boxA.GetComponent<BoxLogic>().otherBoxTouchingDown && !boxB.GetComponent<BoxLogic>().wallTouchingDown && boxA.GetComponent<BoxLogic>().canPushOtherDown)
+                {
+                    boxB.transform.position = Vector3.Lerp(boxB_originPosition, boxB_targetPosition, elapsedTime / moveIntervalTime);
+                }
+
+                elapsedTime += Time.deltaTime;
+                yield return null;
+            }
+
+            boxA.transform.position = boxA_targetPosition;
+
+            if (boxA.GetComponent<BoxLogic>().otherBoxTouchingDown && !boxB.GetComponent<BoxLogic>().wallTouchingDown && boxA.GetComponent<BoxLogic>().canPushOtherDown)
             {
                 boxB.transform.position = boxB_targetPosition;
             }
+
+            boxA_script.boxIsMoving = false;
+            boxA_moving = false;
         }
 
-        boxA_script.boxIsMoving = false;
-        boxA_moving = false;
+        else if (boxA.GetComponent<BoxLogic>().touchingOtherBox)
+        {
+            Debug.Log("Stop ITTTT");
+            if (!boxA.GetComponent<BoxLogic>().otherBoxTouchingUp && boxB.GetComponent<BoxLogic>().canMoveUp)
+            {
+                Debug.Log("Here BEECH");
+                boxA_script.boxIsMoving = true;
+                boxA_moving = true;
+
+                float elapsedTime = 0;
+
+                boxA_originPosition = new Vector3((float)Math.Round(boxA.transform.position.x, 1), (float)Math.Round(boxA.transform.position.y, 1), 0);
+
+                boxA_targetPosition = boxA_originPosition + direction;
+
+                while (elapsedTime < moveIntervalTime)
+                {
+                    boxA.transform.position = Vector3.Lerp(boxA_originPosition, boxA_targetPosition, elapsedTime / moveIntervalTime);
+
+                    elapsedTime += Time.deltaTime;
+                    yield return null;
+                }
+
+                boxA.transform.position = boxA_targetPosition;
+
+                boxA_script.boxIsMoving = false;
+                boxA_moving = false;
+            }
+            else if (!boxA.GetComponent<BoxLogic>().otherBoxTouchingDown)
+            {
+                boxA_script.boxIsMoving = true;
+                boxA_moving = true;
+
+                float elapsedTime = 0;
+
+                boxA_originPosition = new Vector3((float)Math.Round(boxA.transform.position.x, 1), (float)Math.Round(boxA.transform.position.y, 1), 0);
+
+                boxA_targetPosition = boxA_originPosition + direction;
+
+                while (elapsedTime < moveIntervalTime)
+                {
+                    boxA.transform.position = Vector3.Lerp(boxA_originPosition, boxA_targetPosition, elapsedTime / moveIntervalTime);
+
+                    elapsedTime += Time.deltaTime;
+                    yield return null;
+                }
+
+                boxA.transform.position = boxA_targetPosition;
+
+                boxA_script.boxIsMoving = false;
+                boxA_moving = false;
+            }
+            else if (!boxA.GetComponent<BoxLogic>().otherBoxTouchingRight)
+            {
+                boxA_script.boxIsMoving = true;
+                boxA_moving = true;
+
+                float elapsedTime = 0;
+
+                boxA_originPosition = new Vector3((float)Math.Round(boxA.transform.position.x, 1), (float)Math.Round(boxA.transform.position.y, 1), 0);
+
+                boxA_targetPosition = boxA_originPosition + direction;
+
+                while (elapsedTime < moveIntervalTime)
+                {
+                    boxA.transform.position = Vector3.Lerp(boxA_originPosition, boxA_targetPosition, elapsedTime / moveIntervalTime);
+
+                    elapsedTime += Time.deltaTime;
+                    yield return null;
+                }
+
+                boxA.transform.position = boxA_targetPosition;
+
+                boxA_script.boxIsMoving = false;
+                boxA_moving = false;
+            }
+            else if (!boxA.GetComponent<BoxLogic>().otherBoxTouchingLeft)
+            {
+                boxA_script.boxIsMoving = true;
+                boxA_moving = true;
+
+                float elapsedTime = 0;
+
+                boxA_originPosition = new Vector3((float)Math.Round(boxA.transform.position.x, 1), (float)Math.Round(boxA.transform.position.y, 1), 0);
+
+                boxA_targetPosition = boxA_originPosition + direction;
+
+                while (elapsedTime < moveIntervalTime)
+                {
+                    boxA.transform.position = Vector3.Lerp(boxA_originPosition, boxA_targetPosition, elapsedTime / moveIntervalTime);
+
+                    elapsedTime += Time.deltaTime;
+                    yield return null;
+                }
+
+                boxA.transform.position = boxA_targetPosition;
+
+                boxA_script.boxIsMoving = false;
+                boxA_moving = false;
+            }
+
+
+        }
+
+        else if (!boxA.GetComponent<BoxLogic>().touchingOtherBox)
+        {
+            boxA_script.boxIsMoving = true;
+            boxA_moving = true;
+
+            float elapsedTime = 0;
+
+            boxA_originPosition = new Vector3((float)Math.Round(boxA.transform.position.x, 1), (float)Math.Round(boxA.transform.position.y, 1), 0);
+
+            boxA_targetPosition = boxA_originPosition + direction;
+
+            while (elapsedTime < moveIntervalTime)
+            {
+                boxA.transform.position = Vector3.Lerp(boxA_originPosition, boxA_targetPosition, elapsedTime / moveIntervalTime);
+
+                elapsedTime += Time.deltaTime;
+                yield return null;
+            }
+
+            boxA.transform.position = boxA_targetPosition;
+
+            boxA_script.boxIsMoving = false;
+            boxA_moving = false;
+        }
+
+
     }
     public IEnumerator MoveBox2(GameObject boxB, GameObject boxA, Vector3 direction)
     {
-        boxB_script.boxIsMoving = true;
-        boxB_moving = true;
-
-        float elapsedTime = 0;
-
-        boxB_originPosition = new Vector3((float)Math.Round(boxB.transform.position.x, 1), (float)Math.Round(boxB.transform.position.y, 1), 0);
-
-        boxB_targetPosition = boxB_originPosition + direction;
-
-        if (boxB.GetComponent<BoxLogic>().touchingOtherBox) // and box left or right
+        if (boxB.GetComponent<BoxLogic>().touchingOtherBox && direction == Vector3.right && !boxA.GetComponent<BoxLogic>().wallTouchingRight)
         {
+            boxB_script.boxIsMoving = true;
+            boxB_moving = true;
+
+            float elapsedTime = 0;
+
+            boxB_originPosition = new Vector3((float)Math.Round(boxB.transform.position.x, 1), (float)Math.Round(boxB.transform.position.y, 1), 0);
+
+            boxB_targetPosition = boxB_originPosition + direction;
+
             if (boxB.GetComponent<BoxLogic>().otherBoxTouchingRight && !boxA.GetComponent<BoxLogic>().wallTouchingRight && boxB.GetComponent<BoxLogic>().canPushOtherRight)
             {
                 boxA_originPosition = new Vector3((float)Math.Round(boxA.transform.position.x, 1), (float)Math.Round(boxA.transform.position.y, 1), 0);
                 boxA_targetPosition = boxA_originPosition + direction;
             }
-            else if (boxB.GetComponent<BoxLogic>().otherBoxTouchingLeft && !boxA.GetComponent<BoxLogic>().wallTouchingLeft && boxB.GetComponent<BoxLogic>().canPushOtherLeft)
-            {
-                boxA_originPosition = new Vector3((float)Math.Round(boxA.transform.position.x, 1), (float)Math.Round(boxA.transform.position.y, 1), 0);
-                boxA_targetPosition = boxA_originPosition + direction;
-            }
-        }
 
-        while (elapsedTime < moveIntervalTime)
-        {
-            boxB.transform.position = Vector3.Lerp(boxB_originPosition, boxB_targetPosition, (elapsedTime / moveIntervalTime));
-            if (boxB.GetComponent<BoxLogic>().touchingOtherBox) // and box left or right
+            while (elapsedTime < moveIntervalTime)
             {
+                boxB.transform.position = Vector3.Lerp(boxB_originPosition, boxB_targetPosition, (elapsedTime / moveIntervalTime));
+
                 if (boxB.GetComponent<BoxLogic>().otherBoxTouchingRight && !boxA.GetComponent<BoxLogic>().wallTouchingRight && boxB.GetComponent<BoxLogic>().canPushOtherRight)
                 {
                     boxA.transform.position = Vector3.Lerp(boxA_originPosition, boxA_targetPosition, elapsedTime / moveIntervalTime);
                 }
-                else if (boxB.GetComponent<BoxLogic>().otherBoxTouchingLeft && !boxA.GetComponent<BoxLogic>().wallTouchingLeft && boxB.GetComponent<BoxLogic>().canPushOtherLeft)
-                {
-                    boxA.transform.position = Vector3.Lerp(boxA_originPosition, boxA_targetPosition, elapsedTime / moveIntervalTime);
-                }
 
+                elapsedTime += Time.deltaTime;
+                yield return null;
             }
 
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
-
-        boxB.transform.position = boxB_targetPosition;
-        if (boxB.GetComponent<BoxLogic>().touchingOtherBox) // and box left or right
-        {
+            boxB.transform.position = boxB_targetPosition;
             if (boxB.GetComponent<BoxLogic>().otherBoxTouchingRight && !boxA.GetComponent<BoxLogic>().wallTouchingRight && boxB.GetComponent<BoxLogic>().canPushOtherRight)
             {
                 boxA.transform.position = boxA_targetPosition;
             }
-            else if (boxB.GetComponent<BoxLogic>().otherBoxTouchingLeft && !boxA.GetComponent<BoxLogic>().wallTouchingLeft && boxB.GetComponent<BoxLogic>().canPushOtherLeft)
+
+            boxB_script.boxIsMoving = false;
+            boxB_moving = false;
+        }
+        else if (boxB.GetComponent<BoxLogic>().touchingOtherBox && direction == Vector3.left && !boxA.GetComponent<BoxLogic>().wallTouchingLeft)
+        {
+            boxB_script.boxIsMoving = true;
+            boxB_moving = true;
+
+            float elapsedTime = 0;
+
+            boxB_originPosition = new Vector3((float)Math.Round(boxB.transform.position.x, 1), (float)Math.Round(boxB.transform.position.y, 1), 0);
+
+            boxB_targetPosition = boxB_originPosition + direction;
+
+            if (boxB.GetComponent<BoxLogic>().otherBoxTouchingLeft && !boxA.GetComponent<BoxLogic>().wallTouchingLeft && boxB.GetComponent<BoxLogic>().canPushOtherLeft)
+            {
+                boxA_originPosition = new Vector3((float)Math.Round(boxA.transform.position.x, 1), (float)Math.Round(boxA.transform.position.y, 1), 0);
+                boxA_targetPosition = boxA_originPosition + direction;
+            }
+
+            while (elapsedTime < moveIntervalTime)
+            {
+                boxB.transform.position = Vector3.Lerp(boxB_originPosition, boxB_targetPosition, (elapsedTime / moveIntervalTime));
+
+                if (boxB.GetComponent<BoxLogic>().otherBoxTouchingLeft && !boxA.GetComponent<BoxLogic>().wallTouchingLeft && boxB.GetComponent<BoxLogic>().canPushOtherLeft)
+                {
+                    boxA.transform.position = Vector3.Lerp(boxA_originPosition, boxA_targetPosition, elapsedTime / moveIntervalTime);
+                }
+
+                elapsedTime += Time.deltaTime;
+                yield return null;
+            }
+
+            boxB.transform.position = boxB_targetPosition;
+
+            if (boxB.GetComponent<BoxLogic>().otherBoxTouchingLeft && !boxA.GetComponent<BoxLogic>().wallTouchingLeft && boxB.GetComponent<BoxLogic>().canPushOtherLeft)
             {
                 boxA.transform.position = boxA_targetPosition;
             }
 
+            boxB_script.boxIsMoving = false;
+            boxB_moving = false;
         }
 
-        boxB_script.boxIsMoving = false;
-        boxB_moving = false;
+        else if (!boxB.GetComponent<BoxLogic>().touchingOtherBox)
+        {
+            boxB_script.boxIsMoving = true;
+            boxB_moving = true;
+
+            float elapsedTime = 0;
+
+            boxB_originPosition = new Vector3((float)Math.Round(boxB.transform.position.x, 1), (float)Math.Round(boxB.transform.position.y, 1), 0);
+
+            boxB_targetPosition = boxB_originPosition + direction;
+
+            while (elapsedTime < moveIntervalTime)
+            {
+                boxB.transform.position = Vector3.Lerp(boxB_originPosition, boxB_targetPosition, (elapsedTime / moveIntervalTime));
+
+                elapsedTime += Time.deltaTime;
+                yield return null;
+            }
+
+            boxB.transform.position = boxB_targetPosition;
+
+            boxB_script.boxIsMoving = false;
+            boxB_moving = false;
+
+        }
     }
 
     private void OnDrawGizmos()

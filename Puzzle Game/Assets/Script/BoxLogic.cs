@@ -37,9 +37,10 @@ public class BoxLogic : MonoBehaviour
     [SerializeField] public bool wallTouchingLeft = false;
     #endregion
 
-    private void OnCollisionStay2D(Collision2D collision)
+
+    private void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.collider.tag == "box")
+        if (collision.tag == "box")
         {
             touchingOtherBox = true;
 
@@ -47,12 +48,13 @@ public class BoxLogic : MonoBehaviour
 
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        if(collision.collider.tag == "box")
+        if (collision.tag == "box")
         {
             touchingOtherBox = false;
         }
+
     }
 }
 
