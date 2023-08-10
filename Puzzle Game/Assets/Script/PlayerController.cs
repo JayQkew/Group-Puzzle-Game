@@ -212,7 +212,7 @@ public class PlayerController : MonoBehaviour
                 boxA_script.boxIsMoving = false;
                 boxA_moving = false;
             }
-            else if (boxA.GetComponent<BoxLogic>().canMoveDown && boxB.GetComponent<BoxLogic>().canMoveDown && direction == Vector3.down && !boxA.GetComponent<BoxLogic>().otherBoxTouchingDown)
+            else if (boxA.GetComponent<BoxLogic>().canMoveDown && boxA.GetComponent<BoxLogic>().canMoveDown && direction == Vector3.down && !boxA.GetComponent<BoxLogic>().otherBoxTouchingDown)
             {
                 boxA_script.boxIsMoving = true;
                 boxA_moving = true;
@@ -373,7 +373,7 @@ public class PlayerController : MonoBehaviour
                 boxB_script.boxIsMoving = false;
                 boxB_moving = false;
             }
-            else if (boxB.GetComponent<BoxLogic>().canMoveLeft && boxA.GetComponent<BoxLogic>().canMoveLeft && direction == Vector3.left && !boxB.GetComponent<BoxLogic>().otherBoxTouchingLeft)
+            else if (boxB.GetComponent<BoxLogic>().canMoveLeft && boxB.GetComponent<BoxLogic>().canMoveLeft && direction == Vector3.left && !boxB.GetComponent<BoxLogic>().otherBoxTouchingLeft)
             {
                 boxB_script.boxIsMoving = true;
                 boxB_moving = true;
