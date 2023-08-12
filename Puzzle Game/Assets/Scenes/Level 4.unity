@@ -785,7 +785,7 @@ MonoBehaviour:
   boxB_spawnInt: {x: -2, y: -3, z: 0}
   grid: {fileID: 371167613}
   gridLayout: {fileID: 371167613}
-  moveIntervalTime: 0.2
+  moveIntervalTime: 0.1
 --- !u!1 &1437378598 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5628116066946326372, guid: d64f0608a5c5ed14aa1fbaffa528ec20, type: 3}
@@ -1942,6 +1942,75 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1737468321330168761
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3407221435469566046, guid: 7b90bc0b208be6348ba5c9fda97bb7df, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3407221435469566046, guid: 7b90bc0b208be6348ba5c9fda97bb7df, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7419291565944324216, guid: 7b90bc0b208be6348ba5c9fda97bb7df, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7419291565944324216, guid: 7b90bc0b208be6348ba5c9fda97bb7df, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7419291565944324216, guid: 7b90bc0b208be6348ba5c9fda97bb7df, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7419291565944324216, guid: 7b90bc0b208be6348ba5c9fda97bb7df, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.048661973
+      objectReference: {fileID: 0}
+    - target: {fileID: 7419291565944324216, guid: 7b90bc0b208be6348ba5c9fda97bb7df, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7419291565944324216, guid: 7b90bc0b208be6348ba5c9fda97bb7df, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7419291565944324216, guid: 7b90bc0b208be6348ba5c9fda97bb7df, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7419291565944324216, guid: 7b90bc0b208be6348ba5c9fda97bb7df, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7419291565944324216, guid: 7b90bc0b208be6348ba5c9fda97bb7df, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7419291565944324216, guid: 7b90bc0b208be6348ba5c9fda97bb7df, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7419291565944324216, guid: 7b90bc0b208be6348ba5c9fda97bb7df, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8984300291083138504, guid: 7b90bc0b208be6348ba5c9fda97bb7df, type: 3}
+      propertyPath: m_Name
+      value: TriggerDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 8984300291083138504, guid: 7b90bc0b208be6348ba5c9fda97bb7df, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7b90bc0b208be6348ba5c9fda97bb7df, type: 3}
 --- !u!1001 &5628116066068444994
 PrefabInstance:
   m_ObjectHideFlags: 0

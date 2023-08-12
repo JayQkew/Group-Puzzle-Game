@@ -785,7 +785,7 @@ MonoBehaviour:
   boxB_spawnInt: {x: -4, y: 0, z: 0}
   grid: {fileID: 371167613}
   gridLayout: {fileID: 371167613}
-  moveIntervalTime: 0.2
+  moveIntervalTime: 0.1
 --- !u!1 &1437378598 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5628116066946326372, guid: d64f0608a5c5ed14aa1fbaffa528ec20, type: 3}
