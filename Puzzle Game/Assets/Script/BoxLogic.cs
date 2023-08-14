@@ -10,6 +10,7 @@ public class BoxLogic : MonoBehaviour
     [SerializeField] public bool touchingOtherBox = false;
 
     #region Can Move bools
+    [Header("Can Move Side")]
     [SerializeField] public bool canMoveUp = true;
     [SerializeField] public bool canMoveDown = true;
     [SerializeField] public bool canMoveRight = true;
@@ -17,6 +18,7 @@ public class BoxLogic : MonoBehaviour
     #endregion
 
     #region Can Push Bool
+    [Header("Can Push Other Side")]
     [SerializeField] public bool canPushOtherUp = true;
     [SerializeField] public bool canPushOtherDown = true;
     [SerializeField] public bool canPushOtherRight = true;
@@ -24,6 +26,7 @@ public class BoxLogic : MonoBehaviour
     #endregion
 
     #region Box Touching Side
+    [Header("Other Box Touching Side")]
     [SerializeField] public bool otherBoxTouchingUp = false;
     [SerializeField] public bool otherBoxTouchingDown = false;
     [SerializeField] public bool otherBoxTouchingRight = false;
@@ -31,6 +34,7 @@ public class BoxLogic : MonoBehaviour
     #endregion
 
     #region Wall Touching Side
+    [Header("Wall Touching Side")]
     [SerializeField] public bool wallTouchingUp = false;
     [SerializeField] public bool wallTouchingDown = false;
     [SerializeField] public bool wallTouchingRight = false;
