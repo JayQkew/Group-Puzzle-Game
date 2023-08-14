@@ -20,6 +20,7 @@ public class DoorLogic : MonoBehaviour
                         {
                             doorOpen = false;
                             gameObject.GetComponent<BoxCollider2D>().enabled = true;
+                            gameObject.GetComponent<SpriteRenderer>().color = Color.gray;
                         }
                         break;
                     default:
