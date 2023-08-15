@@ -44,6 +44,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Portal
       objectReference: {fileID: 0}
+    - target: {fileID: 4944081624398866694, guid: 8333e67a702f08745b0e5c43eac3a543, type: 3}
+      propertyPath: _portalB
+      value: 
+      objectReference: {fileID: 7021566829164860717}
     - target: {fileID: 4944081624398866808, guid: 8333e67a702f08745b0e5c43eac3a543, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -95,6 +99,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4944081624398866808, guid: 8333e67a702f08745b0e5c43eac3a543, type: 3}
   m_PrefabInstance: {fileID: 102261434978145101}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &5041681038737979977 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4944081624398866692, guid: 8333e67a702f08745b0e5c43eac3a543, type: 3}
+  m_PrefabInstance: {fileID: 102261434978145101}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3333243393022199426
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -102,6 +111,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8377445584255733217}
     m_Modifications:
+    - target: {fileID: 5707066647538832297, guid: 46596c752ae9b2c4dbeecdbcaf16b88f, type: 3}
+      propertyPath: _portalA
+      value: 
+      objectReference: {fileID: 5041681038737979977}
     - target: {fileID: 5707066647538832299, guid: 46596c752ae9b2c4dbeecdbcaf16b88f, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -155,5 +168,10 @@ PrefabInstance:
 --- !u!4 &7021566829164860713 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5707066647538832299, guid: 46596c752ae9b2c4dbeecdbcaf16b88f, type: 3}
+  m_PrefabInstance: {fileID: 3333243393022199426}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7021566829164860717 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5707066647538832303, guid: 46596c752ae9b2c4dbeecdbcaf16b88f, type: 3}
   m_PrefabInstance: {fileID: 3333243393022199426}
   m_PrefabAsset: {fileID: 0}
