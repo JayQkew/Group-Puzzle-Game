@@ -14,8 +14,8 @@ public class PortalScript : MonoBehaviour
 
     private void Start()
     {
-        _boxA = GameObject.FindGameObjectWithTag("Box A");
-        _boxB = GameObject.FindGameObjectWithTag("Box B");
+        _boxA = GameObject.Find("Box A");
+        _boxB = GameObject.Find("Box B");
     }
 
     private void Update()
