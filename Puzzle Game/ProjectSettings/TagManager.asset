@@ -6,6 +6,9 @@ TagManager:
   tags:
   - box
   - wall
+  - Portal
+  - Box A
+  - Box B
   layers:
   - Default
   - TransparentFX
