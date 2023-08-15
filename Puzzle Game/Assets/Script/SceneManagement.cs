@@ -10,18 +10,14 @@ public class SceneManagement : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public void Pause()
-    {
-        Time.timeScale = 0;
-    }
-
-    public void Resume()
-    {
-        Time.timeScale = 1;
-    }
-
-    public void NextScene()
+    public void PlayGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+        Debug.Log("Game has been Quit."); 
     }
 }
