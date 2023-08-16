@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &222387840 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5041681038737979977, guid: 7c1cfeb5b711b0c4eb360f25273a8e06, type: 3}
+  m_PrefabInstance: {fileID: 1927808484}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &301527248
 GameObject:
   m_ObjectHideFlags: 0
@@ -605,6 +610,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 618662682}
   m_CullTransparentMesh: 1
+--- !u!1 &832757451 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7021566829164860717, guid: 7c1cfeb5b711b0c4eb360f25273a8e06, type: 3}
+  m_PrefabInstance: {fileID: 1529407430}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1031354588
 GameObject:
   m_ObjectHideFlags: 0
@@ -806,31 +816,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1184737587}
         m_TargetAssemblyTypeName: SceneManagement, Assembly-CSharp
-        m_MethodName: Restart
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1184737587}
-        m_TargetAssemblyTypeName: SceneManagement, Assembly-CSharp
-        m_MethodName: NextScene
+        m_MethodName: PlayGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -899,6 +885,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 611deb728b4a989408aa24e99a0c7613, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1306245920 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7021566829164860717, guid: 7c1cfeb5b711b0c4eb360f25273a8e06, type: 3}
+  m_PrefabInstance: {fileID: 1927808484}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1336198943
 GameObject:
   m_ObjectHideFlags: 0
@@ -998,6 +989,22 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5041681038737979978, guid: 7c1cfeb5b711b0c4eb360f25273a8e06, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e0888981b44cdac4bbdd78837bfafbfb, type: 3}
+    - target: {fileID: 5041681038737979978, guid: 7c1cfeb5b711b0c4eb360f25273a8e06, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041681038737979978, guid: 7c1cfeb5b711b0c4eb360f25273a8e06, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041681038737979978, guid: 7c1cfeb5b711b0c4eb360f25273a8e06, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7021566829164860713, guid: 7c1cfeb5b711b0c4eb360f25273a8e06, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.5
@@ -1006,6 +1013,30 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 7021566829164860714, guid: 7c1cfeb5b711b0c4eb360f25273a8e06, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e0888981b44cdac4bbdd78837bfafbfb, type: 3}
+    - target: {fileID: 7021566829164860714, guid: 7c1cfeb5b711b0c4eb360f25273a8e06, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7021566829164860714, guid: 7c1cfeb5b711b0c4eb360f25273a8e06, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7021566829164860714, guid: 7c1cfeb5b711b0c4eb360f25273a8e06, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7021566829164860715, guid: 7c1cfeb5b711b0c4eb360f25273a8e06, type: 3}
+      propertyPath: _portalA
+      value: 
+      objectReference: {fileID: 832757451}
+    - target: {fileID: 7021566829164860715, guid: 7c1cfeb5b711b0c4eb360f25273a8e06, type: 3}
+      propertyPath: _portalB
+      value: 
+      objectReference: {fileID: 1839093533}
     - target: {fileID: 8377445584255733217, guid: 7c1cfeb5b711b0c4eb360f25273a8e06, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -1522,30 +1553,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 618662682}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1794744597}
-        m_TargetAssemblyTypeName: SceneManagement, Assembly-CSharp
-        m_MethodName: Resume
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &1794744599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1584,6 +1591,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1794744595}
   m_CullTransparentMesh: 1
+--- !u!1 &1839093533 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5041681038737979977, guid: 7c1cfeb5b711b0c4eb360f25273a8e06, type: 3}
+  m_PrefabInstance: {fileID: 1529407430}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1909103857
 GameObject:
   m_ObjectHideFlags: 0
@@ -2291,6 +2303,30 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5041681038737979978, guid: 7c1cfeb5b711b0c4eb360f25273a8e06, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f41b7a1c212899944a2ea583cba42119, type: 3}
+    - target: {fileID: 5041681038737979978, guid: 7c1cfeb5b711b0c4eb360f25273a8e06, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041681038737979978, guid: 7c1cfeb5b711b0c4eb360f25273a8e06, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041681038737979978, guid: 7c1cfeb5b711b0c4eb360f25273a8e06, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5041681038737979979, guid: 7c1cfeb5b711b0c4eb360f25273a8e06, type: 3}
+      propertyPath: _portalA
+      value: 
+      objectReference: {fileID: 1306245920}
+    - target: {fileID: 5041681038737979979, guid: 7c1cfeb5b711b0c4eb360f25273a8e06, type: 3}
+      propertyPath: _portalB
+      value: 
+      objectReference: {fileID: 222387840}
     - target: {fileID: 7021566829164860713, guid: 7c1cfeb5b711b0c4eb360f25273a8e06, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.5
@@ -2298,6 +2334,22 @@ PrefabInstance:
     - target: {fileID: 7021566829164860713, guid: 7c1cfeb5b711b0c4eb360f25273a8e06, type: 3}
       propertyPath: m_LocalPosition.y
       value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7021566829164860714, guid: 7c1cfeb5b711b0c4eb360f25273a8e06, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f41b7a1c212899944a2ea583cba42119, type: 3}
+    - target: {fileID: 7021566829164860714, guid: 7c1cfeb5b711b0c4eb360f25273a8e06, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7021566829164860714, guid: 7c1cfeb5b711b0c4eb360f25273a8e06, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7021566829164860714, guid: 7c1cfeb5b711b0c4eb360f25273a8e06, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8377445584255733217, guid: 7c1cfeb5b711b0c4eb360f25273a8e06, type: 3}
       propertyPath: m_RootOrder
