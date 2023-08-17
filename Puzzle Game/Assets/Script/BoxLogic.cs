@@ -8,6 +8,7 @@ public class BoxLogic : MonoBehaviour
     [SerializeField] public bool boxIsMoving = false;
     [SerializeField] public BoxType boxType = new BoxType();
     [SerializeField] public bool touchingOtherBox = false;
+    [SerializeField] public bool canTeleport = false;
 
     #region Can Move bools
     [Header("Can Move Side")]

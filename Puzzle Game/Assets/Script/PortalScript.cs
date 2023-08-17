@@ -22,6 +22,8 @@ public class PortalScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
+
+
             if (IsBoxCollidingWithPortal(_boxA, _portalA))
             {
                 TeleportBox(_boxA, _portalB);
