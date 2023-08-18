@@ -72,7 +72,7 @@ public class PlayerController : MonoBehaviour
                 boxA_script.canMoveDown = true;
             }
         }
-        if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
+        else if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
         {
             if (!boxA_moving && boxA_script.canMoveDown)
             {
@@ -80,7 +80,7 @@ public class PlayerController : MonoBehaviour
                 boxA_script.canMoveUp = true;
             }
         }
-        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+        else if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
         {
             if (!boxB_moving && boxB_script.canMoveRight)
             {
@@ -88,7 +88,7 @@ public class PlayerController : MonoBehaviour
                 boxB_script.canMoveLeft = true;
             }
         }
-        if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
+        else if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
         {
             if (!boxB_moving && boxB_script.canMoveLeft)
             {
