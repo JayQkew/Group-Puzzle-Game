@@ -437,7 +437,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 40, y: 33}
+  m_AnchoredPosition: {x: 24, y: 13}
   m_SizeDelta: {x: 269.5463, y: 72}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &197212347
@@ -460,7 +460,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You're doing it wrong.
+  m_text: i like blue...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 262d31b4bbf3aaa489c91098468084b4, type: 2}
   m_sharedMaterial: {fileID: 4139805623627973872, guid: 262d31b4bbf3aaa489c91098468084b4, type: 2}
@@ -1262,7 +1262,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Keep trying ok!
+  m_text: red only works on me!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 262d31b4bbf3aaa489c91098468084b4, type: 2}
   m_sharedMaterial: {fileID: 4139805623627973872, guid: 262d31b4bbf3aaa489c91098468084b4, type: 2}
@@ -2470,6 +2470,7 @@ GameObject:
   - component: {fileID: 1666348059}
   - component: {fileID: 1666348061}
   - component: {fileID: 1666348060}
+  - component: {fileID: 1666348062}
   m_Layer: 5
   m_Name: timer
   m_TagString: Untagged
@@ -2594,6 +2595,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1666348058}
   m_CullTransparentMesh: 1
+--- !u!114 &1666348062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1666348058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f93e2a6331becb44baa37f9352c8ea6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeValue: 0
+  UiTextTimer: {fileID: 1666348060}
 --- !u!1 &1794744595
 GameObject:
   m_ObjectHideFlags: 0

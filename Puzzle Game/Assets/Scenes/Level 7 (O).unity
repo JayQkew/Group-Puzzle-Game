@@ -235,7 +235,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 40, y: 33}
+  m_AnchoredPosition: {x: 97, y: 12}
   m_SizeDelta: {x: 269.5463, y: 72}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &168069663
@@ -258,7 +258,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You're doing it wrong.
+  m_text: BLOOP!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 262d31b4bbf3aaa489c91098468084b4, type: 2}
   m_sharedMaterial: {fileID: 4139805623627973872, guid: 262d31b4bbf3aaa489c91098468084b4, type: 2}
@@ -1602,7 +1602,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Keep trying ok!
+  m_text: Press 'Space' to use portals!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 262d31b4bbf3aaa489c91098468084b4, type: 2}
   m_sharedMaterial: {fileID: 4139805623627973872, guid: 262d31b4bbf3aaa489c91098468084b4, type: 2}
@@ -1629,8 +1629,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 25.58
+  m_fontSizeBase: 25.58
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1665,7 +1665,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -33.29547, y: 0, z: -55.49463, w: 0}
+  m_margin: {x: -33.29547, y: 0, z: -21.980362, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

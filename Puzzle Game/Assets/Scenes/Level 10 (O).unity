@@ -1095,7 +1095,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 40, y: 33}
+  m_AnchoredPosition: {x: 28, y: 27}
   m_SizeDelta: {x: 269.5463, y: 72}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &642956673
@@ -1118,7 +1118,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You're doing it wrong.
+  m_text: Your taking so long...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 262d31b4bbf3aaa489c91098468084b4, type: 2}
   m_sharedMaterial: {fileID: 4139805623627973872, guid: 262d31b4bbf3aaa489c91098468084b4, type: 2}
@@ -1145,8 +1145,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 29
-  m_fontSizeBase: 29
+  m_fontSize: 25.6
+  m_fontSizeBase: 25.6
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1303,6 +1303,7 @@ GameObject:
   - component: {fileID: 795414610}
   - component: {fileID: 795414612}
   - component: {fileID: 795414611}
+  - component: {fileID: 795414613}
   m_Layer: 5
   m_Name: timer
   m_TagString: Untagged
@@ -1427,6 +1428,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 795414609}
   m_CullTransparentMesh: 1
+--- !u!114 &795414613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 795414609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f93e2a6331becb44baa37f9352c8ea6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeValue: 0
+  UiTextTimer: {fileID: 795414611}
 --- !u!1 &1031354588
 GameObject:
   m_ObjectHideFlags: 0
@@ -1600,7 +1615,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 162.582, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -11, y: 22.43629}
+  m_AnchoredPosition: {x: -11, y: 9}
   m_SizeDelta: {x: 188.566, y: 77.8186}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1075992476
@@ -1623,7 +1638,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Keep trying ok!
+  m_text: Almost there!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 262d31b4bbf3aaa489c91098468084b4, type: 2}
   m_sharedMaterial: {fileID: 4139805623627973872, guid: 262d31b4bbf3aaa489c91098468084b4, type: 2}
@@ -1650,8 +1665,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 30
-  m_fontSizeBase: 30
+  m_fontSize: 28.1
+  m_fontSizeBase: 28.1
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

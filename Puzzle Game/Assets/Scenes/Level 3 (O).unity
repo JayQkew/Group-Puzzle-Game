@@ -1953,7 +1953,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Keep trying ok!
+  m_text: This is a tricky one!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 262d31b4bbf3aaa489c91098468084b4, type: 2}
   m_sharedMaterial: {fileID: 4139805623627973872, guid: 262d31b4bbf3aaa489c91098468084b4, type: 2}
@@ -2065,7 +2065,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 40, y: 33}
+  m_AnchoredPosition: {x: 6, y: 33}
   m_SizeDelta: {x: 269.5463, y: 72}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1643827426
@@ -2088,7 +2088,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You're doing it wrong.
+  m_text: ok.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 262d31b4bbf3aaa489c91098468084b4, type: 2}
   m_sharedMaterial: {fileID: 4139805623627973872, guid: 262d31b4bbf3aaa489c91098468084b4, type: 2}
@@ -2122,8 +2122,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
